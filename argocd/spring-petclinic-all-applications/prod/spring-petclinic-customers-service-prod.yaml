@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spring-petclinic-customers-service
+  name: customers-service
   namespace: argocd
 spec:
   project: default

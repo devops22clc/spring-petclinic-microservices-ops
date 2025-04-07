@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spring-petclinic-admin-server
+  name: admin-server
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: spring-petclinic-admin-server=devops22clc/spring-petclinic-admin-server
+    argocd-image-updater.argoproj.io/image-list: admin-server=devops22clc/spring-petclinic-admin-server
     argocd-image-updater.argoproj.io/update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:

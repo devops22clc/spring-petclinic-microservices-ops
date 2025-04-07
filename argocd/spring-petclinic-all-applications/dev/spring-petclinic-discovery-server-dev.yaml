@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spring-petclinic-discovery-server
+  name: discovery-server
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: spring-petclinic-discovery-server=devops22clc/spring-petclinic-discovery-server
+    argocd-image-updater.argoproj.io/image-list: discovery-server=devops22clc/spring-petclinic-discovery-server
     argocd-image-updater.argoproj.io/update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
