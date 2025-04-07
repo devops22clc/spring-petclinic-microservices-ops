@@ -1,5 +1,5 @@
 apiVersion: v2
-name: spring-petclinic-visits-service
+name: visits-service
 description: A Helm chart for spring-petclinic-visits-service
 
 # A chart can be either an 'application' or a 'library' chart.
