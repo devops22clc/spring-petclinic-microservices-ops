@@ -17,3 +17,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  imageUpdater:
+    enable: true
+    tag: latest
