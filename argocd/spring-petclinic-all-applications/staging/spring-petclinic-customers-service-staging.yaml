@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spring-petclinic-discovery-server-staging
+  name: spring-petclinic-customers-service
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-discovery-server/overlay/staging
+    path: spring-petclinic-customers-service/overlay/staging
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc

@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spring-petclinic-visits-service-prod
+  name: spring-petclinic-genai-service
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-visits-service/overlay/prod
+    path: spring-petclinic-genai-service/overlay/prod
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
