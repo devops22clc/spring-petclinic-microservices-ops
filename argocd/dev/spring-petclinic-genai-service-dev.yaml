@@ -1,19 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: discovery-server
+  name: spring-petclinic-genai-service-dev
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: genai-service=devops22clc/spring-petclinic-genai-service
+    argocd-image-updater.argoproj.io/update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-discovery-server/overlay/staging
+    path: spring-petclinic-genai-service/overlay/dev
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: staging
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+ 

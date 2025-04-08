@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-server
+  name: spring-petclinic-vets-service-prod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-config-server/overlay/staging
+    path: spring-petclinic-vets-service/overlay/prod
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: staging
+    namespace: prod
   syncPolicy:
     automated:
       prune: true

@@ -1,24 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: visits-service
+  name: spring-petclinic-customers-service-prod
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: visits-service=devops22clc/spring-petclinic-visits-service
-    argocd-image-updater.argoproj.io/update-strategy: latest
-    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-visits-service/overlay/dev
+    path: spring-petclinic-customers-service/overlay/prod
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prod
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
- 

@@ -1,24 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-server
+  name: spring-petclinic-discovery-server-prod
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: config-server=devops22clc/spring-petclinic-config-server
-    argocd-image-updater.argoproj.io/update-strategy: latest
-    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-config-server/overlay/dev
+    path: spring-petclinic-discovery-server/overlay/prod
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prod
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
- 

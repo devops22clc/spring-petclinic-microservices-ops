@@ -1,19 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vets-service
+  name: spring-petclinic-api-gateway-dev
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: api-gateway=devops22clc/spring-petclinic-api-gateway
+    argocd-image-updater.argoproj.io/update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-vets-service/overlay/prod
+    path: spring-petclinic-api-gateway/overlay/dev
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: prod
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+ 

@@ -1,24 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vets-service
+  name: spring-petclinic-genai-service-prod
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: vets-service=devops22clc/spring-petclinic-vets-service
-    argocd-image-updater.argoproj.io/update-strategy: latest
-    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
     targetRevision: HEAD
-    path: spring-petclinic-vets-service/overlay/dev
+    path: spring-petclinic-genai-service/overlay/staging
     kustomize: {}
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: staging
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
- 
