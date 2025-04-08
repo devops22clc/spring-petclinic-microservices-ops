@@ -10,10 +10,13 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops
-    targetRevision: HEAD
+    repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops.git
     path: spring-petclinic-visits-service/overlay/dev
-    kustomize: {}
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+      releaseName: visits-service
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -21,4 +24,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
- 
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - CreateNamespace=true
