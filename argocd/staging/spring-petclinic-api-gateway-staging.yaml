@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/devops22clc/spring-petclinic-microservices-ops.git
-    path: spring-petclinic-api-gateway/overlay/dev
+    path: spring-petclinic-api-gateway/overlay/staging
     targetRevision: main
     helm:
       valueFiles:
