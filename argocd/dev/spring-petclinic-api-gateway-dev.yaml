@@ -7,6 +7,8 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: api-gateway=devops22clc/spring-petclinic-api-gateway
     argocd-image-updater.argoproj.io/update-strategy: latest
     argocd-image-updater.argoproj.io/write-back-method: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
