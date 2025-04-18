@@ -48,14 +48,15 @@ The Petclinic system is a sample application built using Spring Boot and Microse
 ## 📦 Folder Structure
 
 ```bash
-spring-petclinic-microservices-ops/
-├── jenkins/
-│   ├── jobs/
-│   ├── pipelines/
-│   └── scripts/
-├── k8s/
-│   ├── manifests/
-│   └── env/
-│       ├── dev/
-│       └── staging/
-└── README.md
+spring-petclinic-microservices-ops/      # K8s manifests cho từng môi trường ổn định
+├── spring-petclinic-admin-server/       # K8s manifests cho Admin Server
+├── spring-petclinic-api-gateway/        # K8s manifests cho API Gateway
+├── spring-petclinic-config-server/      # K8s manifests cho Config Server
+├── spring-petclinic-customers-service/  # K8s manifests cho Customers Service
+├── spring-petclinic-discovery-server/   # K8s manifests cho Discovery Server
+├── spring-petclinic-genai-service/      # K8s manifests cho GenAI Service
+├── spring-petclinic-vets-service/       # K8s manifests cho Vets Service
+├── spring-petclinic-visits-service/     # K8s manifests cho Visits Service
+├── argocd/                              # Cấu hình ArgoCD để triển khai GitOps
+├── README.md                        
+
