@@ -19,7 +19,7 @@ The Petclinic system is a sample application built using Spring Boot and Microse
 - **Jenkins** – CI/CD automation
 - **Kubernetes (Minikube / Cluster)** – Container orchestration
 - **Docker** – Containerization
-- **Helm** – (if used) Kubernetes package manager
+- **Helm** – Kubernetes package manager
 - **Git & GitHub** – Version control
 - **Spring Boot** – Java-based microservices
 ---
