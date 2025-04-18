@@ -22,8 +22,6 @@ The Petclinic system is a sample application built using Spring Boot and Microse
 - **Helm** – (if used) Kubernetes package manager
 - **Git & GitHub** – Version control
 - **Spring Boot** – Java-based microservices
-- **NodePort** – Service exposure for testing
-
 ---
 
 ## 🔧 Features
